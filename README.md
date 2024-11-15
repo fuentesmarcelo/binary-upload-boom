@@ -1,3 +1,16 @@
+Cocina:
+A repository filled with updates to my full stack web application, Cocina. Daily pushes to this repo.
+
+How It's Made:
+Tech used: JavaScript, HTML, CSS
+
+
+Optimizations
+I consistently refactor and optimize my code, sometimes for efficiency, sometimes for readability.
+
+Lessons Learned:
+The Biggest Lesson I learned in tackling this endless supply of questions is understanding that there is a long way to go. Not being able to answer a question is okay, as long as you take the initiative to improve.
+
 # Install
 
 `npm install`
