@@ -1,34 +1,36 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const PostSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
   title: {
+    type: String,
+    required: [true, "Title is required"],  // Ensure title is required
+  },
+  ingredients: {
+    type: String,  // You can also use an array of strings if you prefer
+    required: true,
+  },
+  directions: {
     type: String,
     required: true,
   },
-  image: {
+  imagePath: {
     type: String,
-    require: true,
+    required: [true, "Image is required"],  // Ensure image is required
   },
   cloudinaryId: {
-    type: String,
-    require: true,
-  },
-  caption: {
     type: String,
     required: true,
   },
   likes: {
     type: Number,
-    required: true,
+    default: 0,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+    required: true,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+}, { timestamps: true });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model('Post', postSchema);
+

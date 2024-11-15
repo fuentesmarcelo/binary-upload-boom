@@ -3,11 +3,11 @@ import { v2 as cloudinary } from 'cloudinary';
 (async function() {
 
     // Configuration
-    cloudinary.config({ 
-        cloud_name: 'dgso9kju9', 
-        api_key: '992329258219438', 
-        api_secret: '<your_api_secret>' // Click 'View API Keys' above to copy your API secret
-    });
+    // cloudinary.config({ 
+    //     cloud_name: dgso9kju9, 
+    //     api_key: 992329258219438, 
+    //     api_secret: 9q1_kt_01KK90aGYHY8NYFDgZNo // Click 'View API Keys' above to copy your API secret
+    // });
     
     // Upload an image
      const uploadResult = await cloudinary.uploader

@@ -1,15 +1,25 @@
 <%- include('partials/header') -%>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-    </div>
-  </div>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Feed</title>
+</head>
+<body>
+  <h1>Recipe Feed</h1>
+  <ul>
+    <% posts.forEach(post => { %>
+      <li>
+        <h2><%= post.title %></h2>
+        <p><%= post.caption %></p>
+        <img src="<%= post.imagePath %>" alt="Recipe Image" width="200">
+        <p>Likes: <%= post.likes %></p>
+        <a href="/post/<%= post._id %>">View Recipe</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
+
 <%- include('partials/footer') -%>

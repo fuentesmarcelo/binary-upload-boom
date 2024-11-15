@@ -10,6 +10,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
+const bodyParser = require("body-parser"); // Importing body-parser
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -29,6 +30,7 @@ app.use(express.static("public"));
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true })); // Adding body-parser for form submissions
 
 //Logging
 app.use(logger("dev"));
@@ -50,7 +52,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Use flash messages for errors, info, ect...
+//Use flash messages for errors, info, etc.
 app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
